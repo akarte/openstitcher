@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file alias="imgtrashcan">images/trash.png</file>
+        <file alias="imgnewproject">images/newproject.png</file>
+        <file alias="imgpanoramic">images/panoramic.png</file>
+        <file alias="camera">images/camera.png</file>
+        <file alias="camerar">images/camerar.png</file>
+        <file>images/export.png</file>
+        <file>images/import.png</file>
+        <file>images/drag.png</file>
+        <file>images/select.png</file>
+        <file>images/cursor.png</file>
+        <file>images/move.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1090</width>
+    <height>652</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>3</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1090</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Project"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionAdvanced"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuTools"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+     <horstretch>1</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Project"/>
+   <addaction name="separator"/>
+   <addaction name="actionCreate_Panoramic"/>
+   <addaction name="separator"/>
+   <addaction name="actionImport_Images"/>
+   <addaction name="actionExport_Image"/>
+   <addaction name="separator"/>
+   <addaction name="actionStart_Recording"/>
+   <addaction name="actionStart_Traking"/>
+   <addaction name="separator"/>
+   <addaction name="actionFeature_Extraction"/>
+   <addaction name="actionPairwise_Matching"/>
+  </widget>
+  <widget class="DropToolBar" name="dropToolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionDelete_Image"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionImport_Images">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/images/import.png</normaloff>:/images/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import Images</string>
+   </property>
+   <property name="toolTip">
+    <string>Open explorer to add Images to merge...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+I</string>
+   </property>
+  </action>
+  <action name="actionCreate_Panoramic">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/imgpanoramic</normaloff>:/imgpanoramic</iconset>
+   </property>
+   <property name="text">
+    <string>Create Panoramic</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+P</string>
+   </property>
+  </action>
+  <action name="actionNew_Project">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/imgnewproject</normaloff>:/imgnewproject</iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionDelete_Image">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/imgtrashcan</normaloff>:/imgtrashcan</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Image</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove selected image or Drag and Drop a selected image to delete it</string>
+   </property>
+  </action>
+  <action name="actionAdvanced">
+   <property name="text">
+    <string>Advanced</string>
+   </property>
+   <property name="toolTip">
+    <string>Open Advanced Configuration Panel</string>
+   </property>
+  </action>
+  <action name="actionFeature_Extraction">
+   <property name="text">
+    <string>Feature Extraction Test</string>
+   </property>
+   <property name="toolTip">
+    <string>Test Button</string>
+   </property>
+  </action>
+  <action name="actionPairwise_Matching">
+   <property name="text">
+    <string>Pairwise Matching</string>
+   </property>
+  </action>
+  <action name="actionStart_Recording">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/camera</normaloff>:/camera</iconset>
+   </property>
+   <property name="text">
+    <string>Start Recording</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect to Camera to take Pictures</string>
+   </property>
+  </action>
+  <action name="actionStart_Traking">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/camerar</normaloff>:/camerar</iconset>
+   </property>
+   <property name="text">
+    <string>Start Traking</string>
+   </property>
+   <property name="toolTip">
+    <string>Start Traking</string>
+   </property>
+  </action>
+  <action name="actionExport_Image">
+   <property name="icon">
+    <iconset resource="qml.qrc">
+     <normaloff>:/images/export.png</normaloff>:/images/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export Image</string>
+   </property>
+   <property name="toolTip">
+    <string>Open explorer to save Panoramic image</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+E</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DropToolBar</class>
+   <extends>QToolBar</extends>
+   <header>droptoolbar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="qml.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,22 @@
+Process for pseudo-automatized & pseudo-realtime stitching:
+
+0.- Start recording...
+1.- Take picture:
+    - save its mat file <- this will be the 1st image of the stitching final mat image
+    - extract its keypoints by using ORB|FAST feature detector, save it
+2.- Start tracking:
+    - Estimate the actual position of current image in camera recording
+    - Set its projected position
+    - For fast performance:
+        - use ORB|FAST feature detector
+        - no stitching
+        - no blending
+3.- Wait for next taken picture
+    If picture has being taken:
+    Do camera image & saved image has inlines (matches) ?
+        If not : replace saved image with current taken image
+        If yes : parallely do:
+            - replace saved image with map of current camera image & saved image (no stitched)
+            - start new thread : in background begin process for stitch those two images
+4.- While stitcher thread has not finished, continue tracking with actual
+4.- Repeat 3.
